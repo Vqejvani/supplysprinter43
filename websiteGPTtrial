@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home Depot Search</title>
+    <script>
+        function loadWebsiteWithSearch(location) {
+            var iframe = document.getElementById('myIframe');
+            var searchQuery = encodeURIComponent('site:homedepot.com ' + location);
+
+            iframe.src = 'https://www.google.com/search?q=' + searchQuery;
+        }
+    </script>
+</head>
+<body>
+    <h1>Home Depot Search</h1>
+    <label for="locationInput">Enter Home Depot Location:</label>
+    <input type="text" id="locationInput" placeholder="Enter location">
+    <button onclick="loadWebsiteWithSearch(document.getElementById('locationInput').value)">Search Home Depot</button>
+    <br>
+    <iframe id="myIframe" width="1000" height="800" frameborder="0"></iframe>
+</body>
+</html>
