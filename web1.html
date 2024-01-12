@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Dynamic Iframe</title>
+    <script>
+        function loadWebsite1() {
+            // Get the iframe element
+            var iframe = document.getElementById('myIframe');
+
+            // Change the src attribute to load a different website
+            iframe.src = 'https://www.homedepot.com'; // Replace with the desired website URL
+        }
+    </script>
+</head>
+<body>
+    <h1>Dynamic Iframe</h1>
+    <button onclick="loadWebsite1()">Load Website 1</button>
+    <br>
+    <iframe id="myIframe" width="1000" height="800" frameborder="0"></iframe>
+</body>
+</html>
