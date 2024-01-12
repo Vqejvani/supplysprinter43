@@ -3,19 +3,24 @@
 <head>
     <title>Dynamic Iframe</title>
     <script>
-        function loadWebsite1() {
-            // Get the iframe element
+        function loadWebsiteWithLocation(location) {
             var iframe = document.getElementById('myIframe');
+            var homeDepotUrl = 'https://www.homedepot.com';
 
-            // Change the src attribute to load a different website
-            iframe.src = 'https://www.homedepot.com'; // Replace with the desired website URL
+            // Append the location to the URL (modify this according to Home Depot's URL structure)
+            var urlWithLocation = homeDepotUrl + '?location=' + encodeURIComponent(location);
+
+            // Change the src attribute to load the modified URL
+            iframe.src = urlWithLocation;
         }
     </script>
 </head>
 <body>
     <h1>Dynamic Iframe</h1>
-    <button onclick="loadWebsite1()">Load Website 1</button>
+    <label for="locationInput">Enter Home Depot Location:</label>
+    <input type="text" id="locationInput" placeholder="Enter location">
+    <button onclick="loadWebsiteWithLocation(document.getElementById('locationInput').value)">Load Home Depot</button>
     <br>
-    <iframe id="myIframe" width="1000" height="800" frameborder="0"></iframe>
+    <iframe id="myIframe" width="100%" height="800" frameborder="0" sandbox="allow-scripts allow-same-origin"></iframe>
 </body>
 </html>
